@@ -4,6 +4,7 @@
 int main() {
     printf("Bem-vindo ao Super Trunfo das cidades! Cadastre suas cartas:\n");
 
+    int opcao;
 
     //Declaração de variáveis para primeira carta
     char nomeA[15];
@@ -119,7 +120,12 @@ int main() {
 
     //Comparação das cartas
     printf("\n" "Comparando as cartas...\n");
-
+    printf("Escolha o atributo para comparar:\n1. População\n2. Área\n3. PIB\n4. Pontos Turisticos\n5. Densidade Demográfica\n6. PIB per capita\n7. SuperPoder\n"); 
+    scanf("%d", &opcao);
+        
+        switch (opcao)
+        {
+        case 1:
         if (populacaoA > populacaoB) {
             printf("Carta A tem maior população.\n");
         } else if (populacaoA < populacaoB) {
@@ -127,7 +133,9 @@ int main() {
         } else {
             printf("Ambas as cartas têm a mesma população.\n");
         }
+        break;
 
+        case 2:
         if (areaA > areaB) {
             printf("Carta A tem maior área.\n");
         } else if (areaA < areaB) {
@@ -135,7 +143,9 @@ int main() {
         } else {
             printf("Ambas as cartas têm a mesma área.\n");
         }
+        break;
 
+        case 3:
         if (PIBA > PIBB) {
             printf("Carta A tem maior PIB.\n"); 
         } else if (PIBA < PIBB) {
@@ -143,7 +153,9 @@ int main() {
         } else {
             printf("Ambas as cartas têm o mesmo PIB.\n");
         }
+        break;
 
+        case 4:
         if (pontosA > pontosB) {
             printf("Carta A tem mais pontos turisticos.\n");
         } else if (pontosA < pontosB) {
@@ -151,15 +163,19 @@ int main() {
         } else {
             printf("Ambas as cartas têm a mesma quantidade de pontos turisticos.\n");
         }    
-    
+        break;
+
+        case 5:         
         if(densidadeA > densidadeB) {
-            printf("Carta A tem maior densidade demográfica.\n");
+            printf("Carta A tem maior densidade demográfica. A carta B venceu!\n");
         } else if (densidadeA < densidadeB) {
-            printf("Carta B tem maior densidade demográfica.\n");
+            printf("Carta B tem maior densidade demográfica. A carta A venceu!\n");
         } else {
             printf("Ambas as cartas têm a mesma densidade demográfica.\n");
         }
+        break;
 
+        case 6:
         if (PIBpercapitaA > PIBpercapitaB) {
             printf("Carta A tem maior PIB per capita.\n");
         } else if (PIBpercapitaA < PIBpercapitaB) {
@@ -167,11 +183,12 @@ int main() {
         } else {
             printf("Ambas as cartas têm o mesmo PIB per capita.\n");
         }
-    
+        break;
         /*Maior populaçãp seria Chongqing — cerca de 32 milhões de habitantes
         acredito que consigo manter o float em SuperPoder com seus 7 digitos de precisão mas
         lembre de executar testes reais para superpoder para garantir que funcione
         sem precisar de double*/
+        case 7:
         if (SuperPoderA > SuperPoderB) {
                 printf("Carta A tem maior SuperPoder.\n");
             } else if (SuperPoderA < SuperPoderB) {
@@ -179,6 +196,12 @@ int main() {
             } else {
                 printf("Ambas as cartas têm o mesmo SuperPoder.\n");
             }
+        break;  
+
+        default:
+            printf("Opção inválida. Por favor, escolha um número entre 1 e 7.\n");
+            break;
+        }
             
 
 
